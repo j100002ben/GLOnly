@@ -17,26 +17,32 @@ input, textarea, p, blockquote, th, td, iframe {
 }
 
 body > .navbar .brand {
-	margin-left: 20px;
+	margin-left: 5px;
 	float: left;
 	margin-left: 0;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0 5px;
 	font-weight: bold;
 	color: #FFF;
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+	
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+	min-width: 210px;
+	height: 35px;
+	line-height: 35px;
 }
 
 body > .navbar .brand span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	white-space: nowrap;
 	display: none;
+	font-size: 0.8em;
 }
 
 body > .navbar .brand span.zh {
-	display: inline-block;
+	display: block;
 }
-
-
-
-
-
