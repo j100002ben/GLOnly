@@ -28,14 +28,11 @@ body > .navbar .brand {
 	text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
 
-.brand h1, .brand h2 {
-	font-size: 0.8em;
-	margin: 0;
+body > .navbar .brand span {
 	display: none;
-	line-height: normal;
 }
 
-.brand h1 {
+body > .navbar .brand span.zh {
 	display: inline-block;
 }
 
