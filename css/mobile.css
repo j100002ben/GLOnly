@@ -200,10 +200,10 @@ body > .navbar .brand span.en {
 	bottom: 0px;
 	right: 0px;
 	z-index: 6;
-	transition: .4s ease-out;
-	-moz-transition: .4s ease-out;
-	-webkit-transition: .4s ease-out;
-	-o-transition: .4s ease-out;
+	transition: .3s ease-out;
+	-moz-transition: .3s ease-out;
+	-webkit-transition: .3s ease-out;
+	-o-transition: .3s ease-out;
 	transform: 
 		translate3d(0px, 0px, 0px) 
 		scaleX(1) scaleY(1) scaleZ(1) 
