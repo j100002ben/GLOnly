@@ -232,7 +232,8 @@ body > .navbar .brand span.en {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #FFF;
+	background: #FFF url(../imgs/yurionly.jpg) scroll 0% 46px no-repeat;
+	background-size: cover;
 }
 
 #content {
