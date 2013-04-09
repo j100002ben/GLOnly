@@ -10,13 +10,13 @@
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="css/mobile.css" rel="stylesheet">
 	
 	<script src="js/modernizr-2.6.1.min.js"></script>
 	<script src="js/jquery-git2.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 	<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><\/script>')</script>
+	<script src="js/bootstrap.min.js"></script>
 	
+	<link href="css/mobile.css" rel="stylesheet">
 	<script type="text/javascript">
 	(function(window, undefined){
 		var $ = window.jQuery
@@ -25,20 +25,25 @@
 		$(function(){
 			var menu = $('#main-menu')
 			  , main_content = $('#main-content')
+			  , menu_button_tap = false
 			  ;
-			main_content.click(function(){
+			main_content.on('touchend', function(){
 				if( menu.hasClass('active') ) {
 					$('#menu-button').click();
 				}
 			});
-			$(document).bind('touchmove', function(e) { e.preventDefault(); } );
-			$('#menu-button').click(function(){
+			$(document).on('touchmove', function(e) { e.preventDefault(); } );
+			$('#menu-button').on('touchstart', function(){
+				menu_button_tap = true;
+			}).on('touchend', function(){
+				if( ! menu_button_tap ) return ;
+				menu_button_tap = false;
 				if( menu.hasClass('active') ){
 					menu.removeClass('active');
 					main_content.css({'transform': 'translate3d(0px, 0px, 0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg)'});
 				}else{
 					menu.addClass('active');
-					main_content.css({'transform': 'translate3d(-266px, 0px, 0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg)'});
+					main_content.css({'transform': 'translate3d(-200px, 0px, 0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg)'});
 				}
 			});
 		});
@@ -50,8 +55,8 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="">
-					<span class="zh">《百年好合》2014 百合 Only</span>
-					<span class="en">2014 Girls Love Festival</span>
+					<span class="zh front-flip">《百年好合》2014 百合 Only</span>
+					<span class="en back-flip">2014 Girls Love Festival</span>
 				</a>
 				<ul class="nav pull-right">
 					<li><button id="menu-button" class="btn btn-inverse"><i class="icon-list icon-white"></i> Menu</button></li>
@@ -64,6 +69,7 @@
 			<div id="body">
 				<div id="main-content">
 					<div id="main-content-inner">
+						<div id="background"></div>
 						<div id="content">
 							<div id="content-inner">
 								

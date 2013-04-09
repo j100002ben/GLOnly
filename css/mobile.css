@@ -55,7 +55,7 @@ body > .navbar .brand span {
 	background: #191919;
 }
 
-@keyframes zh-flip
+@keyframes front-flip
 {
 0% {transform: rotateX(0deg) rotateY(0deg);}
 25% {transform: rotateX(0deg);}
@@ -63,7 +63,7 @@ body > .navbar .brand span {
 100% {transform: rotateX(180deg);}
 }
 
-@-moz-keyframes zh-flip /* Firefox */
+@-moz-keyframes front-flip /* Firefox */
 {
 0% {-moz-transform: rotateX(0deg) rotateY(0deg);}
 25% {-moz-transform: rotateX(0deg);}
@@ -71,7 +71,7 @@ body > .navbar .brand span {
 100% {-moz-transform: rotateX(180deg);}
 }
 
-@-webkit-keyframes zh-flip /* Safari and Chrome */
+@-webkit-keyframes front-flip /* Safari and Chrome */
 {
 0% {-webkit-transform: rotateX(0deg) rotateY(0deg);}
 25% {-webkit-transform: rotateX(0deg);}
@@ -79,7 +79,7 @@ body > .navbar .brand span {
 100% {-webkit-transform: rotateX(180deg);}
 }
 
-@-o-keyframes zh-flip /* Opera */
+@-o-keyframes front-flip /* Opera */
 {
 0% {-o-transform: rotateX(0deg) rotateY(0deg);}
 25% {-o-transform: rotateX(0deg);}
@@ -87,7 +87,7 @@ body > .navbar .brand span {
 100% {-o-transform: rotateX(180deg);}
 }
 
-@keyframes en-flip
+@keyframes back-flip
 {
 0% {transform: rotateX(180deg) rotateY(0deg);}
 25% {transform: rotateX(180deg);}
@@ -95,7 +95,7 @@ body > .navbar .brand span {
 100% {transform: rotateX(0deg);}
 }
 
-@-moz-keyframes en-flip /* Firefox */
+@-moz-keyframes back-flip /* Firefox */
 {
 0% {-moz-transform: rotateX(180deg) rotateY(0deg);}
 25% {-moz-transform: rotateX(180deg);}
@@ -103,7 +103,7 @@ body > .navbar .brand span {
 100% {-moz-transform: rotateX(0deg);}
 }
 
-@-webkit-keyframes en-flip /* Safari and Chrome */
+@-webkit-keyframes back-flip /* Safari and Chrome */
 {
 0% {-webkit-transform: rotateX(180deg) rotateY(0deg);}
 25% {-webkit-transform: rotateX(180deg);}
@@ -111,7 +111,7 @@ body > .navbar .brand span {
 100% {-webkit-transform: rotateX(0deg);}
 }
 
-@-o-keyframes en-flip /* Opera */
+@-o-keyframes back-flip /* Opera */
 {
 0% {-o-transform: rotateX(180deg) rotateY(0deg);}
 25% {-o-transform: rotateX(180deg);}
@@ -119,25 +119,30 @@ body > .navbar .brand span {
 100% {-o-transform: rotateX(0deg);}
 }
 
-body > .navbar .brand span.zh {
-	z-index: 11;
+.front-flip {
 	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
 	-moz-transform-style: preserve-3d;
 	-moz-backface-visibility: hidden;
 	
-	animation: zh-flip 2s linear 1s infinite alternate;
-    -moz-animation: zh-flip 2s linear 1s infinite alternate;
-    -webkit-animation: zh-flip 2s linear 1s infinite alternate;
+	animation: front-flip 2s linear 1s infinite alternate;
+	-moz-animation: front-flip 2s linear 1s infinite alternate;
+	-webkit-animation: front-flip 2s linear 1s infinite alternate;
+}
+
+.back-flip {
+	animation: back-flip 2s linear 1s infinite alternate;
+	-moz-animation: back-flip 2s linear 1s infinite alternate;
+	-webkit-animation: back-flip 2s linear 1s infinite alternate;
+}
+
+body > .navbar .brand span.zh {
+	z-index: 11;
 }
 
 body > .navbar .brand span.en {
 	z-index: 10;
 	text-indent: 10px;
-	
-	animation: en-flip 2s linear 1s infinite alternate;
-    -moz-animation: en-flip 2s linear 1s infinite alternate;
-    -webkit-animation: en-flip 2s linear 1s infinite alternate;
 }
 
 #container {
@@ -165,8 +170,8 @@ body > .navbar .brand span.en {
 
 #main-menu{
 	position: absolute;
-	width: 266px;
-	right: -266px;
+	width: 200px;
+	right: -200px;
 	top: 0px;
 	bottom: 0px;
 	z-index: 4;
@@ -232,8 +237,22 @@ body > .navbar .brand span.en {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #FFF url(../imgs/yurionly.jpg) scroll -25px 46px no-repeat;
+}
+
+#background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #FFF url(../imgs/yurionly2r.jpg) scroll 100% 0% no-repeat;
 	background-size: cover;
+}
+
+@media only screen and (max-device-width: 480px) {
+	#background {
+		background-position-x: right -55px;
+	}
 }
 
 #content {
@@ -243,6 +262,7 @@ body > .navbar .brand span.en {
 	bottom: 0px;
 	right: 0px;
 	z-index: 4;
+	background-color: rgba(255,255,255,.7);
 }
 
 
