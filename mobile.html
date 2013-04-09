@@ -24,9 +24,9 @@
 			  , main_content = $('#main-content')
 			  , menu_button_tap = false
 			  ;
-			main_content.on('touchend', function(){
-				if( menu.hasClass('active') ) {
-					$('#menu-button').click();
+			main_content.on('touchstart', function(){
+				if( menu_button_tap == true ) {
+					$('#menu-button').trigger('touchend');
 				}
 			});
 			$(document).on('touchmove', function(e) { e.preventDefault(); } );

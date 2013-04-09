@@ -190,15 +190,15 @@ background-size: contain;
 	-moz-transform-style: preserve-3d;
 	-moz-backface-visibility: hidden;
 	
-	animation: front-flip 2s linear 1s infinite alternate;
-	-moz-animation: front-flip 2s linear 1s infinite alternate;
-	-webkit-animation: front-flip 2s linear 1s infinite alternate;
+	animation: front-flip 3s linear 1s infinite alternate;
+	-moz-animation: front-flip 3s linear 1s infinite alternate;
+	-webkit-animation: front-flip 3s linear 1s infinite alternate;
 }
 
 .back-flip {
-	animation: back-flip 2s linear 1s infinite alternate;
-	-moz-animation: back-flip 2s linear 1s infinite alternate;
-	-webkit-animation: back-flip 2s linear 1s infinite alternate;
+	animation: back-flip 3s linear 1s infinite alternate;
+	-moz-animation: back-flip 3s linear 1s infinite alternate;
+	-webkit-animation: back-flip 3s linear 1s infinite alternate;
 }
 
 body > .navbar .brand span.zh {
